@@ -1,13 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "vyonizr-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A package to develop vyonizr website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Fitrahtur Rahman <fitrahtur@gmail.com>",
   "dependencies": {
-    "0": "0.0.0",
     "babel-plugin-styled-components": "^1.10.7",
-    "exit": "^0.1.2",
     "gatsby": "^2.21.37",
     "gatsby-image": "^2.4.4",
     "gatsby-plugin-manifest": "^2.4.5",
