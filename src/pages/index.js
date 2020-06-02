@@ -62,7 +62,7 @@ const IndexPage = () => {
       links: [
         {
           name: 'spotify',
-          url: 'https://open.spotify.com/artist/40lkpbIOSU33kN0mZyMvFW/'
+          url: 'https://open.spotify.com/artist/40lkpbIOSU33kN0mZyMvFW?si=cjJAEzngRh-IZdFX_up2uQ'
         },
         {
           name: 'apple music',
