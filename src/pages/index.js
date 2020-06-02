@@ -135,7 +135,7 @@ const IndexPage = () => {
               )
             }
           </NavButton>
-          <h2 style={{flex: 2}}>{currentChar.role}</h2>
+          <h2 style={{flex: 3}}>{currentChar.role}</h2>
           <NavButton>
             {
               index < characters.length - 1 && (
