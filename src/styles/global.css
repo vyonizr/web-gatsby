@@ -1,0 +1,38 @@
+@font-face {
+  font-family: Jost;
+  src: url(../fonts/Jost/Jost-Regular.ttf);
+}
+
+@font-face {
+  font-family: Jost-Italic;
+  src: url(../fonts/Jost/Jost-Italic.ttf);
+}
+
+@font-face {
+  font-family: Jost-BlackItalic;
+  src: url(../fonts/Jost/Jost-BlackItalic.ttf);
+}
+
+h1, h2 {
+  font-family: Jost-BlackItalic;
+}
+
+body {
+  background-color: #3895D3;
+  font-family: Jost, sans-serif;
+  color: white;
+}
+
+.abs-center {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
