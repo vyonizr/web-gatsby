@@ -18,21 +18,23 @@ h1, h2 {
 }
 
 body {
-  background-color: #3895D3;
+  background-color: #0e5471;
   font-family: Jost, sans-serif;
   color: white;
 }
 
-.abs-center {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
 
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+::-webkit-scrollbar-track {
+  background: hsla(204, 64%, 100%, 0.1);
+}
 
-  margin: auto;
+::-webkit-scrollbar-thumb {
+  background: #3292d2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #277cb4;
 }

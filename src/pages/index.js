@@ -12,14 +12,26 @@ import {
 } from '../images/avatars'
 
 const MainContainer = styled.div`
-  padding-top: 30%;
+  padding-top: 10vh;
+  height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `
 
 const NavigationContainer = styled.div`
+  flex: 1;
+  margin-top: -.5rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
+
+  & > div:first-child {
+    text-align: right;
+  }
+  & > div:last-child {
+    text-align: left;
+  }
 `
 
 const CharLink = styled.li`
@@ -42,6 +54,12 @@ const PrevButton = styled(FaChevronCircleLeft)`
 
 const NextButton = styled(FaChevronCircleRight)`
   cursor: pointer;
+`
+
+const LinkContainer = styled.div`
+  flex: auto;
+  overflow-y: auto;
+  margin-bottom: 1rem;
 `
 
 const IndexPage = () => {
@@ -126,31 +144,33 @@ const IndexPage = () => {
       <SEO title="Home" />
       <MainContainer>
         <img src={ currentChar.avatar } alt={ currentChar.role + ' avatar' } style={{objectFit: 'contain'}} />
-        <h2>vyonizr is</h2>
-        <NavigationContainer>
-          <NavButton>
-            {
-              index > 0 && (
-                <PrevButton size={32} onClick={() => setIndex(index-1)} />
-              )
-            }
-          </NavButton>
-          <h2 style={{flex: 3}}>{currentChar.role}</h2>
-          <NavButton>
-            {
-              index < characters.length - 1 && (
-                <NextButton size={32} onClick={() => setIndex(index+1)} disabled={ index === characters.length - 1 } />
-              )
-            }
-          </NavButton>
-        </NavigationContainer>
-        <div>
+        <div style={{marginTop: '0.75rem'}}>
+          <h2 style={{flex: 1}}>vyonizr is</h2>
+          <NavigationContainer>
+            <NavButton>
+              {
+                index > 0 && (
+                  <PrevButton size={32} onClick={() => setIndex(index-1)} />
+                )
+              }
+            </NavButton>
+            <h2 style={{flex: 3}}>{currentChar.role}</h2>
+            <NavButton>
+              {
+                index < characters.length - 1 && (
+                  <NextButton size={32} onClick={() => setIndex(index+1)} disabled={ index === characters.length - 1 } />
+                )
+              }
+            </NavButton>
+          </NavigationContainer>
+        </div>
+        <LinkContainer>
           <ul>
             { currentChar.links.map((link, index) => 
               <CharLink key={ index }>- <a href={ link.url } target='_blank' rel="noopener noreferrer">{ link.name }</a> -</CharLink>
             )}
           </ul>
-        </div>
+        </LinkContainer>
       </MainContainer>
     </Layout>
   )
