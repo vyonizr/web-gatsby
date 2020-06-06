@@ -22,8 +22,8 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#0e5471`,
-        theme_color: `#3895D3`,
-        display: `minimal-ui`,
+        theme_color: `#0e5471`,
+        display: `standalone`,
         icon: `src/images/vyonizr-web-icon.png`, // This path is relative to the root of the site.
       },
     },
