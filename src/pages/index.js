@@ -11,6 +11,10 @@ import {
   programmer
 } from '../images/avatars'
 
+Number.prototype.mod = function(n) {
+  return ((this % n) + n) % n;
+}
+
 const MainContainer = styled.div`
   padding-top: 10vh;
   height: 100%;
@@ -136,7 +140,7 @@ const IndexPage = () => {
   const [currentChar, setCurrentChar] = useState(characters[0])
 
   useEffect(() => {
-    setCurrentChar(characters[index])
+    setCurrentChar(characters[index.mod(characters.length)])
   }, [index, characters]);
 
   return (
@@ -148,19 +152,11 @@ const IndexPage = () => {
           <h2 style={{flex: 1}}>vyonizr is</h2>
           <NavigationContainer>
             <NavButton>
-              {
-                index > 0 && (
-                  <PrevButton size={32} onClick={() => setIndex(index-1)} />
-                )
-              }
+              <PrevButton size={32} onClick={() => setIndex(index-1)} />
             </NavButton>
             <h2 style={{flex: 3}}>{currentChar.role}</h2>
             <NavButton>
-              {
-                index < characters.length - 1 && (
-                  <NextButton size={32} onClick={() => setIndex(index+1)} disabled={ index === characters.length - 1 } />
-                )
-              }
+              <NextButton size={32} onClick={() => setIndex(index+1)} disabled={ index === characters.length - 1 } />
             </NavButton>
           </NavigationContainer>
         </div>
