@@ -75,6 +75,10 @@ const IndexPage = () => {
         {
           name: 'linkedin',
           url: 'https://www.linkedin.com/in/fitrahtur-rahman/'
+        },
+        {
+          name: 'blog',
+          url: 'https://blog.vyonizr.com/'
         }
       ]
     },
