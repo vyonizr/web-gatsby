@@ -11,10 +11,6 @@ import {
   programmer
 } from '../images/avatars'
 
-Number.prototype.mod = function(n) {
-  return ((this % n) + n) % n;
-}
-
 const MainContainer = styled.div`
   padding-top: 10vh;
   height: 100%;
@@ -143,8 +139,12 @@ const IndexPage = () => {
   const [index, setIndex] = useState(0)
   const [currentChar, setCurrentChar] = useState(characters[0])
 
+  const modulo = (dividend, divisor) => {
+    return ((dividend % divisor) + divisor) % divisor
+  }
+
   useEffect(() => {
-    setCurrentChar(characters[index.mod(characters.length)])
+    setCurrentChar(characters[modulo(index, characters.length)])
   }, [index, characters]);
 
   return (
@@ -166,7 +166,7 @@ const IndexPage = () => {
         </div>
         <LinkContainer>
           <ul>
-            { currentChar.links.map((link, index) => 
+            { currentChar.links.map((link, index) =>
               <CharLink key={ index }>- <a href={ link.url } target='_blank' rel="noopener noreferrer">{ link.name }</a> -</CharLink>
             )}
           </ul>
