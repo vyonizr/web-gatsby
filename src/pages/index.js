@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components";
-import { FaChevronCircleRight, FaChevronCircleLeft } from 'react-icons/fa';
+import styled from "styled-components"
+import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {
@@ -8,8 +8,8 @@ import {
   gamer,
   musicProducer,
   visualHobbyist,
-  programmer
-} from '../images/avatars'
+  programmer,
+} from "../images/avatars"
 
 const MainContainer = styled.div`
   padding-top: 10vh;
@@ -21,10 +21,10 @@ const MainContainer = styled.div`
 
 const NavigationContainer = styled.div`
   flex: 1;
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 
   & > div:first-child {
     text-align: right;
@@ -65,74 +65,75 @@ const LinkContainer = styled.div`
 const IndexPage = () => {
   const [characters] = useState([
     {
-      role: 'Fitrahtur Rahman',
+      role: "Fitrahtur Rahman",
       avatar: fr,
       links: [
         {
-          name: 'linkedin',
-          url: 'https://www.linkedin.com/in/fitrahtur-rahman/'
+          name: "linkedin",
+          url: "https://www.linkedin.com/in/fitrahtur-rahman/",
         },
         {
-          name: 'blog',
-          url: 'https://blog.vyonizr.com/'
-        }
-      ]
+          name: "blog",
+          url: "https://blog.vyonizr.com/",
+        },
+      ],
     },
     {
-      role: 'a music producer',
+      role: "a music producer",
       avatar: musicProducer,
       links: [
         {
-          name: 'spotify',
-          url: 'https://open.spotify.com/artist/40lkpbIOSU33kN0mZyMvFW?si=cjJAEzngRh-IZdFX_up2uQ'
+          name: "spotify",
+          url:
+            "https://open.spotify.com/artist/40lkpbIOSU33kN0mZyMvFW?si=cjJAEzngRh-IZdFX_up2uQ",
         },
         {
-          name: 'apple music',
-          url: 'https://music.apple.com/us/artist/vyonizr/818525307'
+          name: "apple music",
+          url: "https://music.apple.com/us/artist/vyonizr/818525307",
         },
         {
-          name: 'youtube',
-          url: 'https://www.youtube.com/channel/UCf5J9KJQsHHiVFWokEnegqg'
-        }
-      ]
+          name: "youtube",
+          url: "https://www.youtube.com/channel/UCf5J9KJQsHHiVFWokEnegqg",
+        },
+      ],
     },
     {
-      role: 'a programmer',
+      role: "a programmer",
       avatar: programmer,
       links: [
         {
-          name: 'github',
-          url: 'https://github.com/vyonizr/'
+          name: "github",
+          url: "https://github.com/vyonizr/",
         },
         {
-          name: 'codewars',
-          url: 'https://www.codewars.com/users/vyonizr'
-        }
-      ]
+          name: "codewars",
+          url: "https://www.codewars.com/users/vyonizr",
+        },
+      ],
     },
     {
-      role: 'a gamer',
+      role: "a gamer",
       avatar: gamer,
       links: [
         {
-          name: 'steam',
-          url: 'https://steamcommunity.com/id/vyonizr/'
-        }
-      ]
+          name: "steam",
+          url: "https://steamcommunity.com/id/vyonizr/",
+        },
+      ],
     },
     {
-      role: 'a visual hobbyist',
+      role: "a visual hobbyist",
       avatar: visualHobbyist,
       links: [
         {
-          name: 'vsco',
-          url: 'https://vsco.co/vyonizr/gallery'
+          name: "vsco",
+          url: "https://vsco.co/vyonizr/gallery",
         },
         {
-          name: 'deviantart',
-          url: 'https://www.deviantart.com/vyonizr'
-        }
-      ]
+          name: "deviantart",
+          url: "https://www.deviantart.com/vyonizr",
+        },
+      ],
     },
   ])
 
@@ -145,30 +146,44 @@ const IndexPage = () => {
 
   useEffect(() => {
     setCurrentChar(characters[modulo(index, characters.length)])
-  }, [index, characters]);
+  }, [index, characters])
 
   return (
     <Layout>
       <SEO title="Home" />
       <MainContainer>
-        <img src={ currentChar.avatar } alt={ currentChar.role + ' avatar' } style={{objectFit: 'contain'}} />
-        <div style={{marginTop: '0.75rem'}}>
-          <h2 style={{flex: 1}}>vyonizr is</h2>
+        <img
+          src={currentChar.avatar}
+          alt={currentChar.role + " avatar"}
+          style={{ objectFit: "contain" }}
+        />
+        <div style={{ marginTop: "0.75rem" }}>
+          <h2 style={{ flex: 1 }}>vyonizr is</h2>
           <NavigationContainer>
             <NavButton>
-              <PrevButton size={32} onClick={() => setIndex(index-1)} />
+              <PrevButton size={32} onClick={() => setIndex(index - 1)} />
             </NavButton>
-            <h2 style={{flex: 3}}>{currentChar.role}</h2>
+            <h2 style={{ flex: 3 }}>{currentChar.role}</h2>
             <NavButton>
-              <NextButton size={32} onClick={() => setIndex(index+1)} disabled={ index === characters.length - 1 } />
+              <NextButton
+                size={32}
+                onClick={() => setIndex(index + 1)}
+                disabled={index === characters.length - 1}
+              />
             </NavButton>
           </NavigationContainer>
         </div>
         <LinkContainer>
           <ul>
-            { currentChar.links.map((link, index) =>
-              <CharLink key={ index }>- <a href={ link.url } target='_blank' rel="noopener noreferrer">{ link.name }</a> -</CharLink>
-            )}
+            {currentChar.links.map((link, index) => (
+              <CharLink key={index}>
+                -{" "}
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  {link.name}
+                </a>{" "}
+                -
+              </CharLink>
+            ))}
           </ul>
         </LinkContainer>
       </MainContainer>

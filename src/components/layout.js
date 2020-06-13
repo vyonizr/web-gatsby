@@ -10,23 +10,23 @@ import PropTypes from "prop-types"
 
 import "../styles/global.css"
 import "../styles/ress.min.css"
-import styled from "styled-components";
+import styled from "styled-components"
 
 const FullHeightContainer = styled.div`
   height: 100vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 `
 
 const ChildrenContainer = styled.div`
   width: 25rem;
   height: 95%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
-  align-items:center;
+  align-items: center;
 `
 
 const FooterContainer = styled.footer`
@@ -38,12 +38,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <FullHeightContainer>
-        <ChildrenContainer>
-          {children}
-        </ChildrenContainer>
-        <FooterContainer>
-          © {new Date().getFullYear()} vyonizr
-        </FooterContainer>
+        <ChildrenContainer>{children}</ChildrenContainer>
+        <FooterContainer>© {new Date().getFullYear()} vyonizr</FooterContainer>
       </FullHeightContainer>
     </>
   )
