@@ -19,21 +19,6 @@ const MainContainer = styled.div`
   flex-direction: column;
 `
 
-const NavigationContainer = styled.div`
-  flex: 1;
-  margin-top: -0.5rem;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-
-  & > div:first-child {
-    text-align: right;
-  }
-  & > div:last-child {
-    text-align: left;
-  }
-`
-
 const CharLink = styled.li`
   list-style: none;
   align-items: flex-end;
@@ -46,14 +31,20 @@ const CharLink = styled.li`
 
 const NavButton = styled.div`
   flex: 1;
-`
+  display: flex;
+  justify-content: ${props => props.action === 'previous' ? 'flex-end' : 'flex-start'};
 
-const PrevButton = styled(FaChevronCircleLeft)`
-  cursor: pointer;
-`
+  > svg {
+    cursor: pointer;
 
-const NextButton = styled(FaChevronCircleRight)`
-  cursor: pointer;
+    @media(hover: hover) and (pointer: fine) {
+      :hover {
+        color: #b0bec5;
+      }
+    }
+    transition: .25s;
+  }
+
 `
 
 const LinkContainer = styled.div`
@@ -157,21 +148,24 @@ const IndexPage = () => {
           alt={currentChar.role + " avatar"}
           style={{ objectFit: "contain" }}
         />
-        <div style={{ marginTop: "0.75rem" }}>
-          <h2 style={{ flex: 1 }}>vyonizr is</h2>
-          <NavigationContainer>
-            <NavButton>
-              <PrevButton size={32} onClick={() => setIndex(index - 1)} />
-            </NavButton>
-            <h2 style={{ flex: 3 }}>{currentChar.role}</h2>
-            <NavButton>
-              <NextButton
-                size={32}
-                onClick={() => setIndex(index + 1)}
-                disabled={index === characters.length - 1}
-              />
-            </NavButton>
-          </NavigationContainer>
+        <div style={{
+          marginTop: "0.75rem",
+          display: "flex",
+          alignItems: "center"
+        }}>
+          <NavButton action="previous" onClick={() => setIndex(index - 1)}>
+            <FaChevronCircleLeft size={40} />
+          </NavButton>
+          <div style={{
+            flexBasis: '60%',
+            margin: '0 .5rem'
+          }}>
+            <h2 style={{ marginBottom: "-.5rem" }}>vyonizr is</h2>
+            <h2>{currentChar.role}</h2>
+          </div>
+          <NavButton action="next" onClick={() => setIndex(index + 1)}>
+            <FaChevronCircleRight size={40} />
+          </NavButton>
         </div>
         <LinkContainer>
           <ul>
