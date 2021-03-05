@@ -1,3 +1,12 @@
+:root {
+  --background: #0e5471;
+  --white: #ffffff;
+}
+
+html {
+  font-display: swap;
+}
+
 @font-face {
   font-family: Jost;
   src: url(../fonts/Jost/Jost-Regular.ttf);
@@ -13,16 +22,22 @@
   src: url(../fonts/Jost/Jost-BlackItalic.ttf);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: Jost-BlackItalic, sans-serif;
-  font-display: swap;
+  line-height: 110%;
 }
 
 body {
-  background-color: #0e5471;
+  background-color: var(--background);
   font-family: Jost, sans-serif;
-  font-display: swap;
-  color: white;
+  color: var(--white);
+
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 ::-webkit-scrollbar {
