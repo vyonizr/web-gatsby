@@ -2,21 +2,43 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { notFoundMessages } from "consts"
+import { getRandomArbitrary } from "utils"
+
+import Layout from "components/layout"
+import SEO from "components/seo"
 
 const WhiteLink = styled(Link)`
   color: white;
 `
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404" />
-    <div style={{ margin: "auto" }}>
-      <h1>page not found</h1>
-      <WhiteLink to="/">return to homepage</WhiteLink>
-    </div>
-  </Layout>
-)
+const MainContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    width: fit-content;
+    text-align: right;
+  }
+`
+
+const NotFoundPage = () => {
+  const generateMessage = (messages) => messages[Math.floor(getRandomArbitrary(0, messages.length))]
+
+  return (
+    <Layout>
+      <SEO title="404" />
+      <MainContainer>
+        <div>
+          <h1>{generateMessage(notFoundMessages)}</h1>
+          <WhiteLink to="/">return to homepage</WhiteLink>
+        </div>
+      </MainContainer>
+    </Layout >
+  )
+}
 
 export default NotFoundPage
