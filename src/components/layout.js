@@ -8,8 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import "../styles/global.css"
-import "../styles/ress.min.css"
+import "static/styles/global.css"
+import "static/styles/ress.min.css"
 import styled from "styled-components"
 
 const FullHeightContainer = styled.div`
@@ -17,21 +17,16 @@ const FullHeightContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 `
 
 const ChildrenContainer = styled.div`
-  width: 25rem;
-  height: 95%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+  flex: 1;
 `
 
 const FooterContainer = styled.footer`
   height: 5%;
   text-align: center;
+  justify-self: flex-end;
 `
 
 const Layout = ({ children }) => {
