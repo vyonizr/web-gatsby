@@ -3,7 +3,7 @@ import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa"
 
 import Layout from "components/layout"
 import SEO from "components/seo"
-import { characters } from 'constants'
+import { characters } from 'consts'
 import { modulo } from 'utils'
 
 import {

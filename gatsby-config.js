@@ -43,7 +43,7 @@ module.exports = {
         root: "./src",
         aliases: {
           components: "./components",
-          constants: "./constants",
+          consts: "./consts",
           domains: "./domains",
           pages: "./pages",
           static: "./static",

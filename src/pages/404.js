@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { notFoundMessages } from "constants"
+import { notFoundMessages } from "consts"
 import { getRandomArbitrary } from "utils"
 
 import Layout from "components/layout"
